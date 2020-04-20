@@ -1,0 +1,41 @@
+body{
+    margin:0;
+    padding: 0;
+    border: none;
+    overflow: hidden;
+}
+
+.items{
+    display:flex;
+    margin-top:50px;
+}
+
+.images {
+    position: relative;
+    display: block;
+    flex: 1 1 0px;
+    transition: transform 500ms;
+    height: 300px;
+    width: 340px;
+}
+
+.items:focus-within .images,
+.items:hover .images {
+  transform: translateX(-25%);
+}
+
+.images:focus ~ .images,
+.images:hover ~ .images {
+  transform: translateX(25%);
+}
+
+.items .images:focus,
+.items .images:hover {
+  transform: scale(1.5);
+  z-index: 1;
+}
+
+.items img{
+    display: block;
+    max-width: 100%;
+}
